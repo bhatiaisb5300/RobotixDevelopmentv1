@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import FileExtensionValidator
 
 # Create your models here.
 class FYI(models.Model):
@@ -22,4 +23,9 @@ class DIY(models.Model):
 
     def __str__(self):
 
+        return self.title
+class Abstracts(models.Model):
+    title= models.CharField(max_length= 100, blank= True, null= True)
+    abstract_file = models.FileField(null= True, validators=[FileExtensionValidator(allowed_extensions=['pdf','doc','docx'])])
+    def __str__(self):
         return self.title
