@@ -1,0 +1,7 @@
+<form action="{% url 'portal:login' %}" method="post">
+    {% csrf_token %}
+    <input class="text" type="text" name="username" placeholder="username" required=""><br>
+    <input class="text" type="password" name="password" placeholder="password" required=""><br>
+    <input type="submit" value="login" name="login">
+</form>
+<p>Don't have an account? <a href="{% url 'portal:register' %}"> Register Now!</a></p>
