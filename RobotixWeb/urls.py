@@ -29,6 +29,7 @@ urlpatterns = [
     path('info/',include('extras.urls')),
     path('alumni/',include('alumni.urls')),
     path('webteam',views.webteam,name='webteam'),
+    path('roboPortal/',include('roboPortal.urls'))
     # path('form',views.form,name='form'),
     # path('recruitment/',include('recruitment.urls'))
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
